@@ -1,0 +1,13 @@
+overwrite: true
+schema: "https://muddy-violet.eu-central-1.aws.cloud.dgraph.io/graphql"
+documents: "src/graphqls/**/*.graphql"
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+      - "fragment-matcher"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
